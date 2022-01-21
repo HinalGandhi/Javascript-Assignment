@@ -12,11 +12,12 @@
   <title>Scientific Calc</title>
   <link rel="icon" type="image/jpg"
     href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh2j05FYYGtiSLTsbe4u9BdVq7AmEmRTm8eQ&usqp=CAU">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
-  <div class="container">
-    <div class="row bg-secondary">
+  <div class="container d-flex align-items-center justify-content-center">
+    <div class="row ">
       <div class="col-12">
         <input class="col-12 bg-light" placeholder="0">
         <div class="row">
@@ -24,35 +25,40 @@
           <div class="col">F-E</div>
         </div>
         <div class="row">
-          <div class="col text-light">MC</div>
-          <div class="col text-light">MR</div>
+          <div class="col text-secondary">MC</div>
+          <div class="col text-secondary">MR</div>
           <div class="col">M+</div>
           <div class="col">M-</div>
           <div class="col">MS</div>
         </div>
         <div class="row">
           <div class="col d-flex align-items-center "><i class='fas fa-ruler-combined'
-              style="color: whitesmoke; padding: 6px;"></i>
-            <p class="my-0">Trigonometry</p> <i class="fa fa-angle-down" style="color: whitesmoke; padding: 6px;"></i>
+              style=" padding: 6px;"></i>
+            <p class="my-0">Trigonometry</p> <i class="fa fa-angle-down" style=" padding: 6px;"></i>
           </div>
-          <div class="col d-flex align-items-center"> <p class="my-0">Function</p> <i class="fa fa-angle-down" style="color: whitesmoke; padding: 6px;"></i></div>
+          <div class="col d-flex align-items-center">
+            <p class="my-0">Function</p> <i class="fa fa-angle-down" style=" padding: 6px;"></i>
+          </div>
           <div class="col"></div>
         </div>
+        <div class="row" style="display: none;">
+          <button class="col btn btn-light">sin</button>
+          <button class="col btn btn-light">cos</button>
+          <button class="col btn btn-light">tan</button>
+        </div>
         <div class="row">
-          <button class="col btn btn-light">2nd</button>
+          <button class="col btn btn-light">2<sup>nd</sup></button>
           <button class="col btn btn-light">𝞹</button>
           <button class="col btn btn-light">e</button>
           <button class="col btn btn-danger">C</button>
           <button class="col btn btn-light"><i class="fa fa-backspace"></i></button>
-
         </div>
         <div class="row">
-          <button class="col btn btn-light">x^2</button>
+          <button class="col btn btn-light">x<sup>y</sup></button>
           <button class="col btn btn-light">1/x</button>
           <button class="col btn btn-light">|x|</button>
           <button class="col btn btn-light">exp</button>
           <button class="col btn btn-light">mod</button>
-
         </div>
         <div class="row">
           <button class="col btn btn-light"><i class="fa fa-square-root-alt"></i></button>
@@ -60,23 +66,20 @@
           <button class="col btn btn-light">)</button>
           <button class="col btn btn-light">n!</button>
           <button class="col btn btn-light"><i class="fa fa-divide"></i></button>
-
         </div>
         <div class="row">
-          <button class="col btn btn-light">x^y</button>
+          <button class="col btn btn-light">x<sup>y</sup></button>
           <button class="col btn btn-light">7</button>
           <button class="col btn btn-light">8</button>
           <button class="col btn btn-light">9</button>
           <button class="col btn btn-light"><i class="fa fa-times"></i></button>
-
         </div>
         <div class="row">
-          <button class="col btn btn-light">10^x</button>
+          <button class="col btn btn-light">10<sup>x</sup></button>
           <button class="col btn btn-light">4</button>
           <button class="col btn btn-light">5</button>
           <button class="col btn btn-light">6</button>
           <button class="col btn btn-light"><i class="fa fa-minus"></i></button>
-
         </div>
         <div class="row">
           <button class="col btn btn-light">log</button>
@@ -84,25 +87,22 @@
           <button class="col btn btn-light">2</button>
           <button class="col btn btn-light">3</button>
           <button class="col btn btn-light"><i class="fa fa-plus"></i></button>
-
         </div>
         <div class="row">
           <button class="col btn btn-light">ln</button>
-          <button class="col btn btn-light">+/-</button>
+          <button class="col btn btn-light"><sup>+</sup>/-</button>
           <button class="col btn btn-light">0</button>
           <button class="col btn btn-light">.</button>
           <button class="col btn btn-primary"><i class="fa fa-equals"></i></button>
-
         </div>
       </div>
-
     </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
-    <script src="./index.js"></script>
+  <script src="./index.js"></script>
 </body>
 
 </html>

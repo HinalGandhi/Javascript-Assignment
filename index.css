@@ -1,7 +1,22 @@
 body{
     margin: 0;
+    height: 100%;
 }
 button{
     margin: 4px;
-    background-color: whi;
 }
+input{
+    font-size: 2.5rem;
+    border: none;
+    margin-top: 18px;
+    text-align: right;
+    border-radius: 5px;
+}
+.container{
+    background-color:rgb(235, 235, 235);
+}
+@media only screen and (min-width: 769px) {
+    /* For desktop: */
+    .container {width: 25%;max-width:100%;vertical-align: middle;}
+    
+  }
