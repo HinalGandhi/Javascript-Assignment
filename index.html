@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -20,9 +20,9 @@
     <div class="row ">
       <div class="col-12">
         <input class="col-12 bg-light" id="output" placeholder="0">
-        <div class="row">
-          <div class="col">DEG</div>
-          <div class="col">F-E</div>
+        <div class="row mt-2">
+          <div class="col degrees" onclick="degtorad()" style="cursor: pointer;">DEG</div>
+          <div class="col" onclick="exponential()" style="cursor: pointer;">F-E</div>
         </div>
         <div class="row">
           <div class="col text-secondary">MC</div>
@@ -36,7 +36,8 @@
               style=" padding: 6px;"></i>
             <p class="my-0">Trigonometry</p> <i class="fa fa-angle-down" style=" padding: 6px;"></i>
           </div>
-          <div class="col d-flex align-items-center">
+          <div class="col d-flex align-items-center function-title">
+            <p class="my-0 p-2">ƒ</p>
             <p class="my-0">Function</p> <i class="fa fa-angle-down" style=" padding: 6px;"></i>
           </div>
           <div class="col"></div>
@@ -46,6 +47,11 @@
           <button class="col btn btn-light">cos</button>
           <button class="col btn btn-light">tan</button>
         </div>
+        <div class="row functions" style="display: none;">
+          <button class="col btn btn-light">Floor</button>
+          <button class="col btn btn-light">Ceil</button>
+          <button class="col btn btn-light">Random</button>
+        </div>
         <div class="row">
           <button class="col btn btn-light">2<sup>nd</sup></button>
           <button class="col btn btn-light">π</button>
@@ -54,7 +60,7 @@
           <button class="col btn btn-light"><i class="fa fa-backspace"></i></button>
         </div>
         <div class="row">
-          <button class="col btn btn-light">x<sup>2</sup></button>
+          <button class="col btn btn-light" >x<sup>2</sup></button>
           <button class="col btn btn-light">1/x</button>
           <button class="col btn btn-light">|x|</button>
           <button class="col btn btn-light">exp</button>

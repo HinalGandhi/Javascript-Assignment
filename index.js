@@ -1,25 +1,74 @@
-'use strict';
-
-$('.trigo-title').click(function(){
-    $('.trigo-functions').toggle();
-})
+"use strict";
+$(".trigo-title").click(function () {
+  $(".trigo-functions").toggle();
+});
+$(".function-title").click(function () {
+  $(".functions").toggle();
+});
 let display = document.getElementById("output");
 let buttons = document.getElementsByClassName("btn");
-Array.prototype.forEach.call(buttons, function(button) {
-  button.addEventListener("click", function() {
-    if (button.innerHTML != "=" && button.innerHTML != "C" && button.innerHTML != "x" && button.innerHTML != "÷" && button.innerHTML != "sqrt" && button.innerHTML != "sq" && button.innerHTML != "%" && button.innerHTML != "<=" && button.innerHTML != "+/-" && button.innerHTML != "sin" && button.innerHTML != "cos" && button.innerHTML != "tan" && button.innerHTML != "log" && button.innerHTML != "ln" && button.innerHTML != "^" && button.innerHTML != "n!" && button.innerHTML != "π" && button.innerHTML != "exp" && button.innerHTML != "radians" && button.innerHTML != "degrees") {
+Array.prototype.forEach.call(buttons, function (button) {
+  console.log(button.innerHTML);
+  button.addEventListener("click", function () {
+    if (
+      button.innerHTML != "=" &&
+      button.innerHTML != "C" &&
+      button.innerHTML != "x" &&
+      button.innerHTML != "÷" &&
+      button.innerHTML != "1/x" &&
+      button.innerHTML !=
+        '<i class="fa fa-square-root-alt" aria-hidden="true"></i>' &&
+      button.innerHTML != "x<sup>2</sup>" &&
+      button.innerHTML != "2<sup>nd</sup>" &&
+      button.innerHTML != "10<sup>x</sup>" &&
+      button.innerHTML != "%" &&
+      button.innerHTML != "|x|" &&
+      button.innerHTML != "e" &&
+      button.innerHTML != "mod" &&
+      button.innerHTML !=
+        '<i class="fa fa-backspace" aria-hidden="true"></i>' &&
+      button.innerHTML != "+/-" &&
+      button.innerHTML != "sin" &&
+      button.innerHTML != "cos" &&
+      button.innerHTML != "tan" &&
+      button.innerHTML != "Floor" &&
+      button.innerHTML != "Ceil" &&
+      button.innerHTML != "Random" &&
+      button.innerHTML != "log" &&
+      button.innerHTML != "ln" &&
+      button.innerHTML != "x<sup>y</sup>" &&
+      button.innerHTML != "n!" &&
+      button.innerHTML != "π" &&
+      button.innerHTML != "exp"
+    ) {
       display.value += button.innerHTML;
     } else if (button.innerHTML === "=") {
       equals();
     } else if (button.innerHTML === "C") {
       clear();
+    } else if (button.innerHTML === "2<sup>nd</sup>") {
+      power();
+    } else if (button.innerHTML === "10<sup>x</sup>") {
+      power10();
     } else if (button.innerHTML === "x") {
       multiply();
+    } else if (button.innerHTML === "|x|") {
+      absolute();
     } else if (button.innerHTML === "÷") {
       divide();
+    } else if (button.innerHTML === "Floor") {
+      floor();
+    } else if (button.innerHTML === "Ceil") {
+      ceil();
+    } else if (button.innerHTML === "Random") {
+      random();
     } else if (button.innerHTML === "+/-") {
       plusMinus();
-    } else if (button.innerHTML === "<=") {
+    } else if (button.innerHTML === "1/x") {
+      upon();
+    } else if (
+      button.innerHTML === '<i class="fa fa-backspace" aria-hidden="true"></i>'
+    ) {
       backspace();
     } else if (button.innerHTML === "%") {
       percent();
@@ -27,8 +76,15 @@ Array.prototype.forEach.call(buttons, function(button) {
       pi();
     } else if (button.innerHTML === "x<sup>2</sup>") {
       square();
-    } else if (button.innerHTML === '<i class="fa fa-square-root-alt" aria-hidden="true"></i>') {
+    } else if (
+      button.innerHTML ===
+      '<i class="fa fa-square-root-alt" aria-hidden="true"></i>'
+    ) {
       squareRoot();
+    } else if (button.innerHTML === "e") {
+      eulersNum();
+    } else if (button.innerHTML === "mod") {
+      mod();
     } else if (button.innerHTML === "sin") {
       sin();
     } else if (button.innerHTML === "cos") {
@@ -39,16 +95,12 @@ Array.prototype.forEach.call(buttons, function(button) {
       log();
     } else if (button.innerHTML === "ln") {
       ln();
-    } else if (button.innerHTML === "^") {
+    } else if (button.innerHTML === "x<sup>y</sup>") {
       exponent();
     } else if (button.innerHTML === "n!") {
       factorial();
     } else if (button.innerHTML === "exp") {
       exp();
-    } else if (button.innerHTML === "radians") {
-      radians();
-    } else if (button.innerHTML === "degrees") {
-      degrees();
     }
   });
 });
@@ -64,13 +116,13 @@ function syntaxError() {
   }
 }
 function equals() {
-  if ((display.value).indexOf("^") > -1) {
-      let base = (display.value).slice(0, (display.value).indexOf("^"));
-      let exponent = (display.value).slice((display.value).indexOf("^") + 1);
-      display.value = eval("Math.pow(" + base + "," + exponent + ")");
-    }else if(display.value === '' || display.value === undefined){
-        clear();
-    } else {
+  if (display.value.indexOf("^") > -1) {
+    let base = display.value.slice(0, display.value.indexOf("^"));
+    let exponent = display.value.slice(display.value.indexOf("^") + 1);
+    display.value = eval("Math.pow(" + base + "," + exponent + ")");
+  } else if (display.value === "" || display.value === undefined) {
+    clear();
+  } else {
     display.value = eval(display.value);
     checkLength();
     syntaxError();
@@ -110,16 +162,16 @@ function factorial() {
   }
 }
 function pi() {
-  // if(display.value === "") {
-  //   display.value = Math.PI;
-  // }
-  display.value = (display.value * Math.PI);
+  if (display.value === "") {
+    display.value = Math.PI;
+  } else {
+    display.value = display.value * Math.PI;
+  }
 }
 function square() {
-  display.value = eval(display.value * display.value);
+  display.value = display.value * display.value;
 }
 function squareRoot() {
-    console.log(display.value);
   display.value = Math.sqrt(display.value);
 }
 function percent() {
@@ -146,9 +198,51 @@ function exponent() {
 function exp() {
   display.value = Math.exp(display.value);
 }
-function radians() {
-  display.value = display.value * (Math.PI / 180);
+function degtorad() {
+  if ($(".degrees").text() == "DEG") {
+    display.value = display.value * (180 / Math.PI);
+    $(".degrees").text("RAD");
+  } else {
+    display.value = display.value * (Math.PI / 180);
+    $(".degrees").text("DEG");
+  }
 }
-function degrees() {
-  display.value = display.value * (180 / Math.PI);
+function power() {
+  display.value = Math.pow(2, display.value);
+}
+function power10() {
+  display.value = Math.pow(10, display.value);
+}
+function eulersNum() {
+  if (display.value) {
+    display.value = Math.E * display.value;
+  } else {
+    display.value = Math.E;
+  }
+}
+function upon() {
+  if (display.value == 0 && display.value == "") {
+    display.value = "Error";
+  } else {
+    display.value = 1 / display.value;
+  }
+}
+function absolute() {
+  display.value = Math.abs(display.value);
+}
+function mod() {
+  display.value = display.value + "%";
+}
+function ceil() {
+  display.value = Math.ceil(display.value);
+}
+function floor() {
+  display.value = Math.floor(display.value);
+}
+function random() {
+  display.value = Math.random();
+}
+function exponential(){
+  let num = parseFloat(display.value);
+  display.value =  num.toExponential();     
 }
