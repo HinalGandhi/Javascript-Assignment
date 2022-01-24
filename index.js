@@ -1,14 +1,23 @@
 "use strict";
 $(".trigo-title").click(function () {
   $(".trigo-functions").toggle();
+  if ($(".down1").hasClass("fa-angle-down")) {
+    $(".down1").removeClass("fa-angle-down").addClass("fa-angle-up");
+  } else {
+    $(".down1").addClass("fa-angle-down").removeClass("fa-angle-up");
+  }
 });
 $(".function-title").click(function () {
   $(".functions").toggle();
+  if ($(".down").hasClass("fa-angle-down")) {
+    $(".down").removeClass("fa-angle-down").addClass("fa-angle-up");
+  } else {
+    $(".down").addClass("fa-angle-down").removeClass("fa-angle-up");
+  }
 });
 let display = document.getElementById("output");
 let buttons = document.getElementsByClassName("btn");
 Array.prototype.forEach.call(buttons, function (button) {
-  console.log(button.innerHTML);
   button.addEventListener("click", function () {
     if (
       button.innerHTML != "=" &&
@@ -242,7 +251,53 @@ function floor() {
 function random() {
   display.value = Math.random();
 }
-function exponential(){
+function exponential() {
   let num = parseFloat(display.value);
-  display.value =  num.toExponential();     
+  display.value = num.toExponential();
+}
+let memory = [];
+function mplus() {
+  if (display.value != "") {
+    $(".memoryplus").css("display", "block");
+    $(".memoryminus").css("display", "none");
+    $(".memory").css("display", "none");
+    memory.push(parseInt(display.value));
+    display.value = memory.reduce((a, b) => a + b, 0);
+  }
+}
+function mminus() {
+  if (display.value != "") {
+    $(".memoryminus").css("display", "block");
+    $(".memoryplus").css("display", "none");
+    $(".memory").css("display", "none");
+    memory.push(parseInt(-display.value));
+    display.value = memory.reduce((a, b) => a + b, 0);
+  }
+}
+function mrecall() {
+  if (memory.length > 0) {
+    $(".memory").css("display", "block");
+    $(".memoryminus").css("display", "none");
+    $(".memoryplus").css("display", "none");
+    if (memory.length > 1) {
+      display.value = memory[memory.length - 1];
+    } else {
+      display.value = memory[0];
+    }
+  }
+}
+function mclear() {
+  memory = [];
+  $(".memory").css("display", "none");
+  $(".memoryminus").css("display", "none");
+  $(".memoryplus").css("display", "none");
+  display.value = "";
+}
+function msave() {
+  if (display.value != "") {
+    $(".memoryplus").css("display", "none");
+    $(".memoryminus").css("display", "none");
+    $(".memory").css("display", "block");
+    memory.push(parseInt(display.value));
+  }
 }

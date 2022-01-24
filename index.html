@@ -20,25 +20,30 @@
     <div class="row ">
       <div class="col-12">
         <input class="col-12 bg-light" id="output" placeholder="0">
+        <div class="text-secondary memory" style="display: none;">M</div>
+        <div class="text-secondary memoryplus" style="display: none;">M+</div>
+        <div class="text-secondary memoryminus" style="display: none;">M-</div>
         <div class="row mt-2">
           <div class="col degrees" onclick="degtorad()" style="cursor: pointer;">DEG</div>
           <div class="col" onclick="exponential()" style="cursor: pointer;">F-E</div>
         </div>
-        <div class="row">
-          <div class="col text-secondary">MC</div>
-          <div class="col text-secondary">MR</div>
-          <div class="col">M+</div>
-          <div class="col">M-</div>
-          <div class="col">MS</div>
+        <div class="row" style="cursor: pointer;">
+          <div class="col text-secondary" onclick="mclear()">MC</div>
+          <div class="col text-secondary" onclick="mrecall()">MR</div>
+          <div class="col" onclick="mplus()">M+</div>
+          <div class="col" onclick="mminus()">M-</div>
+          <div class="col" onclick="msave()">MS</div>
         </div>
         <div class="row">
           <div class="col d-flex align-items-center trigo-title"><i class='fas fa-ruler-combined'
               style=" padding: 6px;"></i>
-            <p class="my-0">Trigonometry</p> <i class="fa fa-angle-down" style=" padding: 6px;"></i>
+            <p class="my-0">Trigonometry</p> <i class="fa fa-angle-down down1" style=" padding: 6px;"></i>
+            <i class="fa fa-angle-up" style=" padding: 6px;display: none;"></i>
           </div>
           <div class="col d-flex align-items-center function-title">
             <p class="my-0 p-2">ƒ</p>
-            <p class="my-0">Function</p> <i class="fa fa-angle-down" style=" padding: 6px;"></i>
+            <p class="my-0">Function</p> <i class="fa fa-angle-down down" style=" padding: 6px;"></i>
+            <i class="fa fa-angle-up up" style=" padding: 6px;display: none;"></i>
           </div>
           <div class="col"></div>
         </div>
@@ -60,7 +65,7 @@
           <button class="col btn btn-light"><i class="fa fa-backspace"></i></button>
         </div>
         <div class="row">
-          <button class="col btn btn-light" >x<sup>2</sup></button>
+          <button class="col btn btn-light">x<sup>2</sup></button>
           <button class="col btn btn-light">1/x</button>
           <button class="col btn btn-light">|x|</button>
           <button class="col btn btn-light">exp</button>
