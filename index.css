@@ -1,7 +1,7 @@
 body{
     margin: 0;
     height: 100%;
-    font-size: 12px !important;
+    font-size: 13px !important;
 }
 button{
   width: 65px !important;
@@ -13,6 +13,7 @@ button{
   box-shadow: none;
   transition: box-shadow .5s;
   height: 43px !important;
+  border: 1px solid #e7e6e6 !important;
 }
 input{
     font-size: 2.8rem;
@@ -33,6 +34,5 @@ input::placeholder{
 }
 @media only screen and (min-width: 769px) {
     /* For desktop: */
-    .container {width: 22%;max-width:100%;vertical-align: middle;}
-    
+    .container {width: 20vw;max-width:100%;vertical-align: middle;}
   }
