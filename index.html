@@ -2,105 +2,115 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <script src="https://kit.fontawesome.com/15d25d2f3f.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet" href="./index.css" />
   <title>Scientific Calc</title>
   <link rel="icon" type="image/jpg"
-    href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh2j05FYYGtiSLTsbe4u9BdVq7AmEmRTm8eQ&usqp=CAU">
+    href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh2j05FYYGtiSLTsbe4u9BdVq7AmEmRTm8eQ&usqp=CAU" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
   <div class="container d-flex align-items-center justify-content-center">
-    <div class="row ">
+    <div class="row">
       <div class="col-12">
-        <input class="col-12 bg-light" id="output" placeholder="0">
-        <div class="text-secondary memory" style="display: none;">M</div>
-        <div class="text-secondary memoryplus" style="display: none;">M+</div>
-        <div class="text-secondary memoryminus" style="display: none;">M-</div>
+        <input class="col-12 " id="output" placeholder="0" />
+        <div class="text-secondary memory" style="display: none">M</div>
+        <div class="text-secondary memoryplus" style="display: none">M+</div>
+        <div class="text-secondary memoryminus" style="display: none">M-</div>
         <div class="row mt-2">
-          <div class="col degrees" onclick="degtorad()" style="cursor: pointer;">DEG</div>
-          <div class="col" onclick="exponential()" style="cursor: pointer;">F-E</div>
+          <div class="col degrees" onclick="degtorad()" style="cursor: pointer">
+            DEG
+          </div>
+          <div class="col" onclick="exponential()" style="cursor: pointer">
+            F-E
+          </div>
         </div>
-        <div class="row" style="cursor: pointer;">
+        <div class="row my-2" style="cursor: pointer; text-align: center">
           <div class="col text-secondary" onclick="mclear()">MC</div>
           <div class="col text-secondary" onclick="mrecall()">MR</div>
           <div class="col" onclick="mplus()">M+</div>
           <div class="col" onclick="mminus()">M-</div>
           <div class="col" onclick="msave()">MS</div>
         </div>
-        <div class="row" style="cursor: pointer;">
-          <div class="col d-flex align-items-center trigo-title"><i class='fas fa-ruler-combined'
-              style=" padding: 6px;"></i>
-            <p class="my-0">Trigonometry</p> <i class="fa fa-angle-down down1" style=" padding: 6px;"></i>
-            <i class="fa fa-angle-up" style=" padding: 6px;display: none;"></i>
+        <div class="row mt-2" style="cursor: pointer">
+          <div class="col d-flex align-items-center trigo-title">
+            <i class="fas fa-ruler-combined" style="padding: 6px"></i>
+            <p class="my-0">Trigonometry</p>
+            <i class="fa fa-angle-down down1" style="padding: 6px"></i>
+            <i class="fa fa-angle-up" style="padding: 6px; display: none"></i>
           </div>
-          <div class="col d-flex align-items-center function-title" style="cursor: pointer;">
+          <div class="col d-flex align-items-center function-title" style="cursor: pointer">
             <p class="my-0 p-2">ƒ</p>
-            <p class="my-0">Function</p> <i class="fa fa-angle-down down" style=" padding: 6px;"></i>
-            <i class="fa fa-angle-up up" style=" padding: 6px;display: none;"></i>
+            <p class="my-0">Function</p>
+            <i class="fa fa-angle-down down" style="padding: 6px"></i>
+            <i class="fa fa-angle-up up" style="padding: 6px; display: none"></i>
           </div>
           <div class="col"></div>
         </div>
-        <div class="row trigo-functions" style="display: none;">
-          <button class="col btn btn-light">sin</button>
-          <button class="col btn btn-light">cos</button>
-          <button class="col btn btn-light">tan</button>
+        <div class="row trigo-functions" style="display: none">
+          <button class="col btn " >sin</button>
+          <button class="col btn ">cos</button>
+          <button class="col btn ">tan</button>
         </div>
-        <div class="row functions" style="display: none;">
-          <button class="col btn btn-light">Floor</button>
-          <button class="col btn btn-light">Ceil</button>
-          <button class="col btn btn-light">Random</button>
-        </div>
-        <div class="row">
-          <button class="col btn btn-light">2<sup>nd</sup></button>
-          <button class="col btn btn-light">π</button>
-          <button class="col btn btn-light">e</button>
-          <button class="col btn btn-danger">C</button>
-          <button class="col btn btn-light"><i class="fa fa-backspace"></i></button>
+        <div class="row functions" style="display: none">
+          <button class="col btn ">Floor</button>
+          <button class="col btn ">Ceil</button>
+          <button class="col btn ">Random</button>
         </div>
         <div class="row">
-          <button class="col btn btn-light">x<sup>2</sup></button>
-          <button class="col btn btn-light">1/x</button>
-          <button class="col btn btn-light">|x|</button>
-          <button class="col btn btn-light">exp</button>
-          <button class="col btn btn-light">mod</button>
+          <button class="col btn " style="background-color: #e7e6e600;">2<sup>nd</sup></button>
+          <button class="col btn " style="background-color: #e7e6e600;">π</button>
+          <button class="col btn " style="background-color: #e7e6e600;">e</button>
+          <button class="col btn " style="background-color: #e7e6e600;">C</button>
+          <button class="col btn " style="background-color: #e7e6e600;">
+            <i class="fa fa-backspace"></i>
+          </button>
         </div>
         <div class="row">
-          <button class="col btn btn-light"><i class="fa fa-square-root-alt"></i></button>
-          <button class="col btn btn-light">(</button>
-          <button class="col btn btn-light">)</button>
-          <button class="col btn btn-light">n!</button>
-          <button class="col btn btn-light">÷</button>
+          <button class="col btn " style="background-color: #e7e6e600;">x<sup>2</sup></button>
+          <button class="col btn " style="background-color: #e7e6e600;">1/x</button>
+          <button class="col btn " style="background-color: #e7e6e600;">|x|</button>
+          <button class="col btn " style="background-color: #e7e6e600;">exp</button>
+          <button class="col btn " style="background-color: #e7e6e600;">mod</button>
         </div>
         <div class="row">
-          <button class="col btn btn-light">x<sup>y</sup></button>
+          <button class="col btn " style="background-color: #e7e6e600;">
+            <i class="fa fa-square-root-alt"></i>
+          </button>
+          <button class="col btn " style="background-color: #e7e6e600;">(</button>
+          <button class="col btn " style="background-color: #e7e6e600;">)</button>
+          <button class="col btn " style="background-color: #e7e6e600;">n!</button>
+          <button class="col btn " style="background-color: #e7e6e600;">÷</button>
+        </div>
+        <div class="row">
+          <button class="col btn " style="background-color: #e7e6e600;">x<sup>y</sup></button>
           <button class="col btn btn-light">7</button>
           <button class="col btn btn-light">8</button>
           <button class="col btn btn-light">9</button>
-          <button class="col btn btn-light">x</button>
+          <button class="col btn " style="background-color: #e7e6e600;">x</button>
         </div>
         <div class="row">
-          <button class="col btn btn-light">10<sup>x</sup></button>
+          <button class="col btn " style="background-color: #e7e6e600;">10<sup>x</sup></button>
           <button class="col btn btn-light">4</button>
           <button class="col btn btn-light">5</button>
           <button class="col btn btn-light">6</button>
-          <button class="col btn btn-light">-</button>
+          <button class="col btn " style="background-color: #e7e6e600;">-</button>
         </div>
         <div class="row">
-          <button class="col btn btn-light">log</button>
+          <button class="col btn " style="background-color: #e7e6e600;">log</button>
           <button class="col btn btn-light">1</button>
           <button class="col btn btn-light">2</button>
           <button class="col btn btn-light">3</button>
-          <button class="col btn btn-light">+</button>
+          <button class="col btn " style="background-color: #e7e6e600;">+</button>
         </div>
         <div class="row">
-          <button class="col btn btn-light">ln</button>
+          <button class="col btn " style="background-color: #e7e6e600;">ln</button>
           <button class="col btn btn-light">+/-</button>
           <button class="col btn btn-light">0</button>
           <button class="col btn btn-light">.</button>

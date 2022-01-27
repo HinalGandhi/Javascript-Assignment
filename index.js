@@ -26,7 +26,7 @@ Array.prototype.forEach.call(buttons, function (button) {
       button.innerHTML != "÷" &&
       button.innerHTML != "1/x" &&
       button.innerHTML !=
-        '<i class="fa fa-square-root-alt" aria-hidden="true"></i>' &&
+      '<i class="fa fa-square-root-alt" aria-hidden="true"></i>' &&
       button.innerHTML != "x<sup>2</sup>" &&
       button.innerHTML != "2<sup>nd</sup>" &&
       button.innerHTML != "10<sup>x</sup>" &&
@@ -35,7 +35,7 @@ Array.prototype.forEach.call(buttons, function (button) {
       button.innerHTML != "e" &&
       button.innerHTML != "mod" &&
       button.innerHTML !=
-        '<i class="fa fa-backspace" aria-hidden="true"></i>' &&
+      '<i class="fa fa-backspace" aria-hidden="true"></i>' &&
       button.innerHTML != "+/-" &&
       button.innerHTML != "sin" &&
       button.innerHTML != "cos" &&

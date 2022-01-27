@@ -1,22 +1,38 @@
 body{
     margin: 0;
     height: 100%;
+    font-size: 12px !important;
 }
 button{
-    margin: 4px;
+  width: 65px !important;
+  outline: none !important;
+  border: none !important;
+  padding: 10px;
+  font-size: 15px !important;
+  margin: 5px 1px 1px 2px;
+  box-shadow: none;
+  transition: box-shadow .5s;
+  height: 43px !important;
 }
 input{
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     border: none;
-    margin-top: 18px;
+    outline: none;
+    margin: 3px 0px 7px 0px;
     text-align: right;
     border-radius: 5px;
+    background-color: rgb(235, 235, 235);
+    line-height: 0;
+}
+input::placeholder{
+    color: black;
+    background-color: rgb(235, 235, 235) !important;
 }
 .container{
     background-color:rgb(235, 235, 235);
 }
 @media only screen and (min-width: 769px) {
     /* For desktop: */
-    .container {width: 25%;max-width:100%;vertical-align: middle;}
+    .container {width: 22%;max-width:100%;vertical-align: middle;}
     
   }
